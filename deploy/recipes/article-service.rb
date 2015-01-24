@@ -18,7 +18,7 @@ node[:deploy].each do |application, deploy|
   end
 
   current_dir = ::File.join(deploy[:deploy_to], 'current')
-  launch_dir = ::File.join(node['opsworks_java']['base_dir'])
+  app_dir = ::File.join(node['opsworks_java']['app_dir'])
 
   # opsworks_deploy creates some stub dirs, which are not needed for typical webapps
   ruby_block "remove unnecessary directory entries in #{current_dir}" do
@@ -29,7 +29,7 @@ node[:deploy].each do |application, deploy|
     end
   end
 
-  link launch_dir do
+  link app_dir do
     to current_dir
     action :create
   end

@@ -11,4 +11,4 @@
 #normal['opsworks_java']['tomcat']['threadpool_max_threads'] = 150
 
 normal['opsworks_java']['service_name'] = "article_server"
-normal['opsworks_java']['base_dir'] = "/home/ubuntu/app"
+normal['opsworks_java']['app_dir'] = "/home/ubuntu/app"
