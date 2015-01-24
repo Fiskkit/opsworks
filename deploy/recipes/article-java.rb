@@ -34,7 +34,7 @@ node[:deploy].each do |application, deploy|
     action :create
   end
 
-  include_recipe "opsworks_java::article_service"
+  include_recipe "opsworks_java::article-service"
 
   execute "trigger article service restart" do
     command '/bin/true'
